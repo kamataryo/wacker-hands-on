@@ -11,12 +11,12 @@ before_script:
 - npm install
 - npm run build
 script:
-- ls index.html
+- ls js/
 after_success:
+- rm .travis.yml
 - curl https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh | bash
 
 env:
   global:
   - NODE_VERSION_TO_DEPLOY: 6
   - GH_REF: github.com/KamataRyo/wacker-hands-on2
-  - secure: "c/jXtaNT9dC8WFn9P5GpTQZwhMAjT+WiQ76gBjwQY/fbvzeDaGiHN8zGa5fafBQRYFtNwCL3EqAMwO3PccOZaQmEdfoUyk98Yt/iP9QcSWbJrVnkTG4biKsLsn3nRdfNHg0OOj6a87F1n/pvMn5PHxj7STyUtm8KMwzP8MoWFATJh89AglkB4vW6fVL1PvcEl/B609AVPCanpixJkG+qm5ie75DPgj9vQyEhrsJf/hh5SPXLd7jmSf1UIUv1oodPF1qhXVmOv8cwPXVbXsXVgAuoGCv/vGzDrM52MrONflGXElkVwTt0mJfj3mBbnbB5CImbQIIKJXWHI/04Z9C5wS4xGvZrtpnbqo1JR0950YwIBWMDGUuxUG1vybttTTi3uy6Z3aWhuBISZfBT0CWhzI1k//fmTEQWbDZCLTD5PF/dBCrMrmZ0EFlKABhbagc2YGBHC1Wg6WbgjB0qqXbbBsKQgQmtJwyXERhQAQDkujEWl++tsMTCN3mLhTL8maienN9iS2zkQPIqVrRYfVhUnhJ77QerjQ/h8uQTrqLLUijmhnEZv8auChf3qa5nmbuZ4FBF78BMX2aJXx8CnsI0GllwGBKAw28aAhSDIh/u8k0UoKX5X+x55K1SrJklDpseD6y8dG3UZjoQBgOV1qu7c9k+TZNWH624A5mwdFHN5bg="
