@@ -23,3 +23,4 @@ env:
   global:
   - NODE_VERSION_TO_DEPLOY: 6
   - GH_REF: github.com/KamataRyo/wacker-hands-on
+  - secure: "" #travis encryptコマンドで、Githubリポジトリへのアクセストークンを暗号化して指定する。README参照
