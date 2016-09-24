@@ -1,12 +1,13 @@
 {
   "name": "wacker-hands-on",
   "version": "1.0.0",
-  "description": "This is test for Github Hands-on@wacker #5",
+  "description": "This is example remository for Github Hands-on@wacker #6",
   "main": "index.js",
   "scripts": {
     "start": "http-server -o",
     "build": "mkdir -p js && cp node_modules/jquery/dist/* js/",
-    "test": "ls js/*.min.js"
+    "test": "ls js/*.min.js",
+    "hello": "echo 'hello'"
   },
   "repository": {
     "type": "git",

@@ -10,8 +10,10 @@ branches:
 before_script:
 - npm install
 - npm run build
+
 script:
-- ls js/
+- npm test
+
 after_success:
 - rm .gitignore
 - rm .travis.yml
@@ -20,4 +22,4 @@ after_success:
 env:
   global:
   - NODE_VERSION_TO_DEPLOY: 6
-  - GH_REF: github.com/KamataRyo/wacker-hands-on2
+  - GH_REF: github.com/KamataRyo/wacker-hands-on
