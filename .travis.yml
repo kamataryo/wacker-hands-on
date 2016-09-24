@@ -8,9 +8,9 @@ branches:
   - master
 
 before_script:
-- touch hello.txt
+- npm install
+- npm run build
 script:
-- ls hello.txt
 - ls index.html
 after_success:
 - curl https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh | bash
