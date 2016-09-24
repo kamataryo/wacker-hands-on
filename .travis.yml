@@ -13,6 +13,7 @@ before_script:
 script:
 - ls js/
 after_success:
+- rm .gitignore
 - rm .travis.yml
 - curl https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh | bash
 
