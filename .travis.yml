@@ -2,25 +2,21 @@ language: node_js
 node_js:
 - '4'
 - '6'
-
 branches:
   only:
   - master
-
 before_script:
 - npm install
 - npm run build
-
 script:
 - npm test
-
 after_success:
 - rm .gitignore
 - rm .travis.yml
-- curl https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh | bash
-
+- curl https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh
+  | bash
 env:
   global:
   - NODE_VERSION_TO_DEPLOY: 6
   - GH_REF: github.com/KamataRyo/wacker-hands-on
-  - secure: "" #travis encryptコマンドで、Githubリポジトリへのアクセストークンを暗号化して指定する。README参照
+  - secure: SSDSvo7xnR5KjL+wRp7FXYz9S9hJ89QfvSo+R1I1z8t5rTYRpXiF9BDxcW6Rh/FdHjmmXKRc9kRJ9h3Lb2wnypmcszLyytqnBf7YvjlPeB9mseVR3q0ju5syhvx4SMumYFE/OlAW+pv2jHvk4LeirOKhBuWWGH1dhcMzKneFlPeaNDxMDfa8fXv7587egJYAMPhL87hU7GxF4uuwbROydbl+WJ7nPO2kVY4hzOyeOoGi9H/okNKO0IutedeZfEK7AzzEUMRSroaZhV0ehSDJ4s1xDQ91Pnv0jrW9pnIvgaBTeLzUjj39g49HmGrrARQ8qw4F0o2I4CXt2vwZyo/4e3f2jHpCxUFsBQGcL/cz4iJZ8yfL4UNe0ArFx1A69oLE8qcetgcaqJApOKa6CtHP/2whmJeMOpWC21KJinzq0r1v9A+kgBBh0nG0kaes2gy1YP39ubKoVQLdYT64BLmybppauPKIOM+Hn5FvJG8E+oDmIquyNbFPXS0BwFWbJqi6OqyJNWVYdutwF6+fhAQlDg4gtGHBTrOgQ0O4AyOv8HPVHq8NWvIUZDoo9trOyny1AIbNdfSxqkD/tHZGXk9LJg98XnlBB3jZBJCi48C0mOxFgZpZm62O3P2yErR/GRmDNJhC0htdqLV28DGqthtEoq+GR7v7Ii1zIAtlBLq81uQ=
