@@ -23,17 +23,20 @@ https://travis-ci.org/KamataRyo/wacker-hands-on/settings
 $ gem install travis
 ```
 
-### key=valueの形で値を暗号化
+#### KEY=valueの形で値を暗号化
 
-標準出力に表示される文字列をコピペします。
+出力される文字列をコピペします。
 
 ```
 $ travis encrypt KEY=value
+```
+
+```
 $ vi .travis.yml
 
 env:
   global:
-  - secure: "{{暗号化された値を記載}}"
+  - secure: "{{出力された値を記載}}"
 ```
 
 あるいは、--addオプションを使うと、自動で`.travis.yml`に追記されます。
