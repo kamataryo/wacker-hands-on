@@ -53,7 +53,10 @@ https://github.com/settings/tokens/new
 
 上記のURLから最小の権限を設定すると、自分のすべてのリポジトリにアクセスできるアクセストークンが得られます。リポジトリ毎など、もっと権限を切り分けたいのですが、方法がわからないです。ご存知の方がいたら教えて下さい。
 
-アクセストークンを使うと、以下のようなURLでGithubのリモートリポジトリにアクセスできます。
+## Travis CIからgithub.comへアクセスする
+
+上記のアクセストークンを使うと、インターネット上の任意のノードから自分のGithubのリポジトリにアクセスできます。
+
 ```
 # gh-pagesブランチに強制pushするコマンド
 # 環境変数として以下のものを渡しています
@@ -62,11 +65,11 @@ https://github.com/settings/tokens/new
 $ git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
 ```
 
-私は以下のようなデプロイ用スクリプトを使っています。
+デプロイ用スクリプトの例は以下です。
 
-https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh
+https://github.com/KamataRyo/travis-sctipts-collection/blob/master/deploy-gh-pages.sh
 
-セキュリティ面でいろいろ懸案がありますので、運用には注意する必要があります。
-宮内さんのサイトでわかりやすく解説されています。
+セキュリティ面でいろいろ懸案がありますので運用には注意が必要です。
+以下のサイトで分かりやすく解説されています。
 
 https://firegoby.jp/archives/6396
