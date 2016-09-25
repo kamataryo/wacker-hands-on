@@ -13,8 +13,7 @@ script:
 after_success:
 - rm .gitignore
 - rm .travis.yml
-- curl https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh
-  | bash
+- curl https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh　| bash
 env:
   global:
   - NODE_VERSION_TO_DEPLOY: 6
