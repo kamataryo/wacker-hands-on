@@ -2,12 +2,6 @@
 
 This is example remository for Github Hands-on@wacker #6
 
-## 参考リンクなど
-
-https://firegoby.jp/archives/6396
-
-
-
 ## Travis CIでセキュアな値を利用する
 
 以下の操作を行うと、Travis CIのコンテナ内で環境変数KEY(=value)をセキュアに利用できます。
@@ -57,13 +51,22 @@ github.comから取得できます。
 
 https://github.com/settings/tokens/new
 
-上記のURLから最小の権限を設定すると、自分のすべてのリポジトリにアクセスできるアクセストークンが得られます。リポジトリ毎など、もっと権限を切り分けたいのですが、方法がわかりません。ご存知の方がおられたら教えて下さい。
+上記のURLから最小の権限を設定すると、自分のすべてのリポジトリにアクセスできるアクセストークンが得られます。リポジトリ毎など、もっと権限を切り分けたいのですが、方法がわからないです。ご存知の方がいたら教えて下さい。
 
 アクセストークンを使うと、以下のようなURLでGithubのリモートリポジトリにアクセスできます。
 ```
-# プッシュする例
-$ git push https://{{TOKEN}}@github.com/{{user}}/{{repo}} master
+# gh-pagesブランチに強制pushするコマンド
+# 環境変数として以下のものを渡しています
+# - アクセストークンGH_TOKEN
+# - リポジトリへのリファレンスGH_REF="github.com/kamataryo/wacker-hands-on"
+$ git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
 ```
 
 私は以下のようなデプロイ用スクリプトを使っています。
+
 https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh
+
+セキュリティ面でいろいろ懸案がありますので、運用には注意する必要があります。
+宮内さんのサイトでわかりやすく解説されています。
+
+https://firegoby.jp/archives/6396
